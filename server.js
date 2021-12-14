@@ -16,12 +16,16 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-// mongoose connection - aquired from seed file
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+// mongoose connection - aquired from seed file for mongo // heroku connection
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/workout", 
+  {
   useNewUrlParser: true,
-  useFindAndModify: false,
   useUnifiedTopology: true,
-});
+  useCreateIndex: true,
+  useFindAndModify: false
+}
+);
 
 // database connection to models
 // const db = require("./models");
@@ -32,6 +36,5 @@ app.use(require('./routes/htmlRoutes.js'))
 
 // /////////////////////////////////////////////////////
 app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}!`);
-  });
-  
+  console.log(`App running on port ${PORT}!`);
+});
