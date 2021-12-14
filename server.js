@@ -16,9 +16,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-// mongoose connection - aquired from seed file for mongo // heroku connection
+// mongoose connection - aquired from seed file for mongo // heroku connection  - murmuring-taiga-99726
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/murmuring-taiga-99726", 
+  process.env.MONGODB_URI || "mongodb://localhost/tech-bo", 
   {
   useNewUrlParser: true,
   useUnifiedTopology: true,
