@@ -1,4 +1,4 @@
-// workout.js to keep things simple 
+// workout.js to keep things simple - follow group project structure (transaction.js)
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
@@ -10,13 +10,13 @@ const workoutSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    // ///////////////////////////////////
+    // /////////////////////////////////// pluck from seed file 
     exercises: [
         {
             type: {
                 type: String,
                 trim: true,
-                required: "Please input an exercise type" // cardio / resistence
+                required: "Please input an exercise type" // cardio / resistance
             },
             name: {
                 type: String,
