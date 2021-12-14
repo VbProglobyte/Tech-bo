@@ -32,7 +32,7 @@ mongoose.connect(
 
 // routes for api and html
 app.use(require('./routes/apiRoutes.js'))
-app.use(require('./routes/htmlRoutes.js'))
+app.use(require('./routes/homeRoutes.js'))
 
 // /////////////////////////////////////////////////////
 app.listen(PORT, () => {

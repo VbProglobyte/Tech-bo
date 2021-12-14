@@ -2,74 +2,76 @@
 const Workout = require('../models/workout')
 // ////////////////////////////////////////
 const router = require('express').Router()
-
+const mongoose = require("mongoose")
 // routes - get, post, put
-router.get('/api/workouts', (req, res) => {
-    Workout.aggregate([
-        {
-            $addFields: {
-                totalDuration: {
-                    $sum: '$exercises.duration'
-                }
-            }
-        }
-    ])
-    .then(dbWorkout => {
+// creates a new Workout instance, adds it to database
+router.post("/api/workouts", ({ body }, res) => {
+    Workout.create(body)
+      .then((dbWorkout) => {
+        console.log(dbWorkout);
+  
         res.json(dbWorkout);
-    })
-    .catch(err => {
+      })
+      .catch((err) => {
         res.status(400).json(err);
-    });
-});
-
-router.get('/api/workouts/range', (req, res) => {
+      });
+  });
+  
+  // gets all workout data from database
+  router.get("/api/workouts", (req, res) => {
     Workout.aggregate([
-        {
-            $addFields: {
-                totalDuration: {
-                    $sum: '$exercises.duration'
-                }
-            }
-        }
-    ])
-    .sort({
-        _id: -1
-    })
-    .limit(7)
-    .then(dbWorkout => {
-        res.json(dbWorkout)
-    })
-    .catch(err => {
-        res.status(400).json(err)
-    });
-})
-
-router.post('/api/workouts', (req, res) => {
-    Workout.create({})
-    .then(dbWorkout => {
-        res.json(dbWorkout);
-    })
-    .catch(err => {
-        res.status(400).json(err)
-    });
-});
-
-router.put('/api/workouts/:id', (req, res) => {
-    Workout.findByIdAndUpdate(req.params.id,
-        {
-            $push: {exercises: req.body}
+      {
+        $addFields: {
+          totalDuration: {
+            $sum: "$exercises.duration",
+          },
         },
-        {
-            new: true
-        })
-        .then(dbWorkout => {
-            res.json(dbWorkout)
-        })
-        .catch(err => {
-            res.status(400).json(err);
-        });
-});
-
+      },
+    ])
+      .sort({ date: -1 })
+      .then((dbWorkout) => {
+        res.json(dbWorkout);
+      })
+      .catch((err) => {
+        res.status(400).json(err);
+      });
+  });
+  
+  // gets workout data from database w/in range to populate charts on /stats page
+  router.get("/api/workouts/range", (req, res) => {
+    Workout.aggregate([
+      {
+        $addFields: {
+          totalDuration: { $sum: "$exercises.duration" },
+          totalWeight: { $sum: "$exercises.weight" },
+        },
+      },
+    ])
+      .limit(7)
+      .sort({ date: -1 })
+      .then((dbWorkout) => {
+        res.json(dbWorkout);
+      })
+      .catch((err) => {
+        res.status(400).json(err);
+      });
+  });
+  
+  // updates exercises within a specific Workout instance
+  router.put("/api/workouts/:id", ({ body, params }, res) => {
+    Workout.findByIdAndUpdate(
+      { _id: params.id },
+      { $push: { exercises: body } },
+      { new: true }
+    )
+      .then((dbWorkout) => {
+        res.json(dbWorkout);
+      })
+      .catch((err) => {
+        res.status(400).json(err);
+      });
+  });
+  
 
 
 module.exports = router;
