@@ -4,7 +4,7 @@ const Workout = require('../models/workout')
 const router = require('express').Router()
 const mongoose = require("mongoose")
 // routes - get, post, put
-// creates a new Workout instance, adds it to database
+// creates a new Workout to the database
 router.post("/api/workouts", ({ body }, res) => {
     Workout.create(body)
       .then((dbWorkout) => {
@@ -17,7 +17,7 @@ router.post("/api/workouts", ({ body }, res) => {
       });
   });
   
-  // gets all workout data from database
+  // gets all workout data
   router.get("/api/workouts", (req, res) => {
     Workout.aggregate([
       {
@@ -37,7 +37,7 @@ router.post("/api/workouts", ({ body }, res) => {
       });
   });
   
-  // gets workout data from database w/in range to populate charts on /stats page
+  // charts on /stats page
   router.get("/api/workouts/range", (req, res) => {
     Workout.aggregate([
       {
@@ -57,7 +57,7 @@ router.post("/api/workouts", ({ body }, res) => {
       });
   });
   
-  // updates exercises within a specific Workout instance
+  // updated exercises
   router.put("/api/workouts/:id", ({ body, params }, res) => {
     Workout.findByIdAndUpdate(
       { _id: params.id },
