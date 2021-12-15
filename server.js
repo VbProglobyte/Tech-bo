@@ -17,8 +17,9 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // mongoose connection - aquired from seed file for mongo // heroku connection  - murmuring-taiga-99726
+// mongodb+srv://VbProglobyte:Vb784839@cluster0.5alc9.mongodb.net/tech-bo?retryWrites=true&w=majority
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/dbWorkout", 
+  process.env.MONGODB_URI || "mongodb://localhost/tech-bo", 
   {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -26,6 +27,7 @@ mongoose.connect(
   useFindAndModify: false
 }
 );
+
 
 // database connection to models
 // const db = require("./models");
