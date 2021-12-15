@@ -28,6 +28,7 @@ I was tasked to use several technologies to accomplish this task, but this was t
 ## Usage 
 Once you have the app open you can now add the workouts you want. When you've added all the ones you want, look at the dashboard (top left corner) and see the chart animation.
 
+https://github.com/VbProglobyte/Tech-bo/blob/main/public/src/screencapture-boiling-tor-83580-herokuapp-exercise-2021-12-15-13_17_52.png
 
 # Check out the App
 https://boiling-tor-83580.herokuapp.com/
