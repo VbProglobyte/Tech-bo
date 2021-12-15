@@ -1,7 +1,7 @@
 // dependencies
 const express = require("express");
 const mongoose = require("mongoose");
-const morgan = require("morgan")
+// const morgan = require("morgan")
 // /////////////////////////////////////////
 // live port connection 
 const PORT = process.env.PORT || 3000;
@@ -31,7 +31,7 @@ mongoose.connect(
 // database connection to models
 // const db = require("./models");
 
-// routes for api and html - connection probs may be quote related (?)
+// routes for api and html - connection probs
 app.use(require("./routes/apiRoutes.js"));
 app.use(require("./routes/indexRoutes.js")); 
 
