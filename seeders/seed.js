@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const db = require('../models');
-
+const db = require('../models'); 
+//////////////////////////////////////////////////////////    mongoose connection 
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/tech-bo',
   {
