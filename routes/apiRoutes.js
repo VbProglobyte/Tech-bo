@@ -1,8 +1,9 @@
+const mongoose = require("mongoose")
 // const db = require("../models");
 const Workout = require('../models/workout')
 // ////////////////////////////////////////
 const router = require('express').Router()
-const mongoose = require("mongoose")
+
 // routes - get, post, put
  // gets all workout data
  router.get("/api/workouts", (req, res) => {
@@ -48,7 +49,7 @@ router.post("/api/workouts", ({ body }, res) => {
         },
       },
     ])
-      .limit(7)
+      .limit(7) // 7 days in the week
       .sort({ date: -1 })
       .then((dbWorkout) => {
         res.json(dbWorkout);
@@ -58,7 +59,7 @@ router.post("/api/workouts", ({ body }, res) => {
       });
   });
   
-  // updated exercises
+  // updated exercises // pull from workout.js in models folder
   router.put("/api/workouts/:id", ({ body, params }, res) => {
     Workout.findByIdAndUpdate(
       { _id: params.id },
