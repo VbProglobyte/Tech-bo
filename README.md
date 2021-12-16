@@ -22,8 +22,9 @@ I was tasked to use several technologies to accomplish this task, but this was t
     3. Run the express package installation. [npm install express]
     4. Now activate the Mongo database in a seperate terminal. [mongod]
     5. Run mongo [mongo] - the port should be listening now.
-    6. Now run [npm start] or [node server.js] to initialize. 
-    7. You can open the heroku app by entering [heroku open] in the terminal.
+    6. Run the seeds file so the data will populate [npm run seed] or [node seeders/seed.js]
+    7. Now run [npm start] or [node server.js] to initialize. 
+    8. You can open the heroku app by entering [heroku open] in the terminal.
 
 ## Usage 
 Once you have the app open you can now add the workouts you want. When you've added all the ones you want, look at the dashboard (top left corner) and see the chart animation.
