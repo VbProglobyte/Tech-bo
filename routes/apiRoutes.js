@@ -16,7 +16,7 @@ router.get("/api/workouts", (req, res) => {
       },
     },
   ])
-   
+    .sort({ date: -1 }) //date parameter in workout.js
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })
@@ -35,8 +35,8 @@ router.get("/api/workouts/range", (req, res) => {
       },
     },
   ])
-    .sort({ id: -1 })
     .limit(7) // 7 days in the week
+    .sort({ date: -1 }) //date parameter in workout.js
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })
@@ -65,13 +65,13 @@ router.put("/api/workouts/:id", ({ body, params }, res) => {
     { _id: params.id },
     { $push: { exercises: body } },
     { new: true })
-  //   {
-  //     $push: {exercises: req.body}
-  // },
-  // {
-  //     new: true
-  // })
-  
+    //   {
+    //     $push: {exercises: req.body}
+    // },
+    // {
+    //     new: true
+    // })
+
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })
