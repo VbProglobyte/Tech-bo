@@ -8,7 +8,12 @@ I was tasked to use several technologies to accomplish this task, but this was t
 
 ## Issues 
 I had issues with Heroku specifically. One moment my application would deploy and everything was perfect, then it would not deploy my application. Works perfectly locally and all of my seed data is stored on Mongo Atlas. 
-       
+
+To show that it did work :
+![image](https://user-images.githubusercontent.com/83515305/146403601-f5513817-28de-442b-98c4-88c9b64c8669.png)
+
+And then the error it threw at me after I pushed to GitHub :   
+
         $ heroku run node seeders/seed.js
         Running node seeders/seed.js on ⬢ boiling-tor-83580... up, run.3852 (Free)
         internal/modules/cjs/loader.js:905
