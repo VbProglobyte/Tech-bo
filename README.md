@@ -6,26 +6,12 @@ As a user, I want to be able to view create and track daily workouts. I want to 
 
 I was tasked to use several technologies to accomplish this task, but this was the first time I ever had to use Mongodb Atlas for storing the data. This was interesting to use, but at the same time it was a challenging task to work through to get everything to work smoothly. 
 
-## Issues 
-I had issues with Heroku specifically. One moment my application would deploy and everything was perfect, then it would not deploy my application. Works perfectly locally and all of my seed data is stored on Mongo Atlas. 
-
 To show that it did work :
 ![image](https://user-images.githubusercontent.com/83515305/146403601-f5513817-28de-442b-98c4-88c9b64c8669.png)
 
-And then the error it threw at me after I pushed to GitHub :   
-
-        $ heroku run node seeders/seed.js
-        Running node seeders/seed.js on ⬢ boiling-tor-83580... up, run.3852 (Free)
-        internal/modules/cjs/loader.js:905
-        throw err;
-        ^
-
-        Error: Cannot find module './Workout'
-        Require stack:
-        - /app/models/index.js
-        - /app/seeders/seed.js 
-
 ![screencapture-cloud-mongodb-v2-61b8f42742cbfc212f53aaaf-2021-12-16-09_17_46](https://user-images.githubusercontent.com/83515305/146399252-f74b282e-bdd6-4744-8e25-1b973044a8ff.png)
+
+### NOTE : Case sensitivity is no joke. Double check if you rename a file (with a different case) that GitHub registered this change. It won't always recognize the change of case on a letter(s).
 
 ## Installation / Tech used 
 
@@ -56,7 +42,7 @@ Once you have the app open you can now add the workouts you want. When you've ad
 
 
 # Check out the App
-https://boiling-tor-83580.herokuapp.com/
+https://boiling-tor-83580.herokuapp.com/?id=61bb664864a4490004c45311
 
 # Credits 
 MrTofuuu
