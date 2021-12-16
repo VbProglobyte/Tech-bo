@@ -20,6 +20,8 @@ I had issues with Heroku specifically. One moment my application would deploy an
         - /app/models/index.js
         - /app/seeders/seed.js 
 
+![screencapture-cloud-mongodb-v2-61b8f42742cbfc212f53aaaf-2021-12-16-09_17_46](https://user-images.githubusercontent.com/83515305/146399252-f74b282e-bdd6-4744-8e25-1b973044a8ff.png)
+
 ## Installation / Tech used 
 
 ### Technology : 
@@ -42,8 +44,11 @@ I had issues with Heroku specifically. One moment my application would deploy an
 
 ## Usage 
 Once you have the app open you can now add the workouts you want. When you've added all the ones you want, look at the dashboard (top left corner) and see the chart animation.
+![screencapture-boiling-tor-83580-herokuapp-2021-12-16-00_53_20](https://user-images.githubusercontent.com/83515305/146399157-250d5764-b87b-4211-9a79-4bcd4358d3c0.png)
+![screencapture-boiling-tor-83580-herokuapp-exercise-2021-12-15-13_17_52](https://user-images.githubusercontent.com/83515305/146399189-8d71c668-9522-4666-95ee-25c50b5809ce.png)
+![screencapture-localhost-3000-stats-2021-12-16-09_16_46](https://user-images.githubusercontent.com/83515305/146399213-c1c9ddcd-6cd3-44d7-b6b4-d1fc71dfa3d3.png)
 
-https://github.com/VbProglobyte/Tech-bo/blob/main/public/src/screencapture-boiling-tor-83580-herokuapp-exercise-2021-12-15-13_17_52.png
+
 
 # Check out the App
 https://boiling-tor-83580.herokuapp.com/
