@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-// const db = require("../models");
+const db = require("../models");
 const Workout = require('../models/workout')
 // ////////////////////////////////////////
 const router = require('express').Router()
@@ -45,7 +45,7 @@ router.get("/api/workouts/range", (req, res) => {
     });
 });
 
-// creates a new Workout to the database
+// creates a new workout to the database
 router.post("/api/workouts", ({ body }, res) => {
   Workout.create(body)
     .then((dbWorkout) => {
