@@ -8,7 +8,7 @@ I was tasked to use several technologies to accomplish this task, but this was t
 
 ## Installation / Tech used 
 
-### Technology   
+### Technology : 
     Node.js  - https://nodejs.org/en/download/
     MongoDB - https://docs.mongodb.com/guides/server/install/
     Mongoose
