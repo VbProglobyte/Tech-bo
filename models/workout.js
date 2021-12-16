@@ -40,9 +40,13 @@ const workoutSchema = new Schema({
             // cardio
             distance: {
                 type: Number,
-            }
-        }
-    ]
+            },
+        },
+    ],
+    // had to get help with this part
+    totalDuration: {
+        type: Number,
+      },
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);
