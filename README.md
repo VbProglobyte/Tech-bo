@@ -45,4 +45,5 @@ Once you have the app open you can now add the workouts you want. When you've ad
 https://boiling-tor-83580.herokuapp.com/?id=61bb664864a4490004c45311
 
 # Credits 
-MrTofuuu
+MrTofuuu, Corbin, AndrewT
+{ Thank you guys for all the help with troubleshooting } 
