@@ -16,7 +16,7 @@ router.get("/api/workouts", (req, res) => {
       },
     },
   ])
-    .sort({ date: -1 })
+   
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })
@@ -35,7 +35,7 @@ router.get("/api/workouts/range", (req, res) => {
       },
     },
   ])
-    .sort({ date: -1 })
+    .sort({ id: -1 })
     .limit(7) // 7 days in the week
     .then((dbWorkout) => {
       res.json(dbWorkout);
