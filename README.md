@@ -6,6 +6,20 @@ As a user, I want to be able to view create and track daily workouts. I want to 
 
 I was tasked to use several technologies to accomplish this task, but this was the first time I ever had to use Mongodb Atlas for storing the data. This was interesting to use, but at the same time it was a challenging task to work through to get everything to work smoothly. 
 
+## Issues 
+I had issues with Heroku specifically. One moment my application would deploy and everything was perfect, then it would not deploy my application. Works perfectly locally and all of my seed data is stored on Mongo Atlas. 
+       
+        $ heroku run node seeders/seed.js
+        Running node seeders/seed.js on ⬢ boiling-tor-83580... up, run.3852 (Free)
+        internal/modules/cjs/loader.js:905
+        throw err;
+        ^
+
+        Error: Cannot find module './Workout'
+        Require stack:
+        - /app/models/index.js
+        - /app/seeders/seed.js 
+
 ## Installation / Tech used 
 
 ### Technology : 
