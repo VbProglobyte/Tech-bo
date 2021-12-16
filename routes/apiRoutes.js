@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const db = require("../models");
-const Workout = require('../models/workout')
+const Workout = require('../models/Workout')
 // ////////////////////////////////////////
 const router = require('express').Router()
 
